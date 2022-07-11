@@ -1,0 +1,66 @@
+﻿
+@model IEnumerable<LivresWebApplication.Models.Livre>
+
+@{
+    ViewData["Title"] = "VENTES DE LIVRES";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>
+     @ViewData["Title"]
+
+    </title>
+</head>
+<body>
+   
+    <div class="text-center">
+        <h1 class="display-4">Bienvenue à la Ventes de livres</h1>
+        <span style="font-size: 18pt;">Hello, <b>MVC</b> Books!</span>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+    <p>
+        <a asp-action="Create">Créer un nouveau livre</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Titre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AnneePub)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Auteur)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AnneePub)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Auteur)
+                    </td>
+                   
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Mise à jour</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Consulter</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+</table>
+</body>
+</html>

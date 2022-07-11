@@ -1,0 +1,44 @@
+﻿@model LivresWebApplication.Models.Livre
+
+@{
+    ViewData["Title"] = "Mise à jour du livre";
+}
+
+<h1>Modification du livre</h1>
+
+<h4>Livre</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Titre" class="control-label"></label>
+                <input asp-for="Titre" class="form-control" />
+                <span asp-validation-for="Titre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnneePub" class="control-label"></label>
+                <input asp-for="AnneePub" class="form-control" />
+                <span asp-validation-for="AnneePub" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Auteur" class="control-label"></label>
+                <input asp-for="Auteur" class="form-control" />
+                <span asp-validation-for="Auteur" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour à la liste de livres</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
