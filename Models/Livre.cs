@@ -11,5 +11,6 @@ namespace LivresWebApplication.Models
         public String Titre { get; set; }
         public int  AnneePub { get; set; }
         public String Auteur { get; set; }
+        
     }
 }

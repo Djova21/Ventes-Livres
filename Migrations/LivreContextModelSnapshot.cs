@@ -33,6 +33,8 @@ namespace LivresWebApplication.Migrations
 
                     b.Property<string>("Titre")
                         .HasColumnType("nvarchar(max)");
+                   
+
 
                     b.HasKey("Id");
 

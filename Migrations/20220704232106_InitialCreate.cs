@@ -14,7 +14,8 @@ namespace LivresWebApplication.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titre = table.Column<string>(nullable: true),
                     AnneePub = table.Column<int>(nullable: false),
-                    Auteur = table.Column<string>(nullable: true)
+                    Auteur = table.Column<string>(nullable: true),
+                   
                 },
                 constraints: table =>
                 {

@@ -36,29 +36,46 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Auteur)
                 </th>
-                <th></th>
+
+               
+
+                <th>
+                    <span>Possession</span>
+                </th>
+                <th>
+                    <span>Souhait Achat</span>
+                </th>
+
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+           @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Titre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AnneePub)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Auteur)
-                    </td>
-                   
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Mise à jour</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Consulter</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AnneePub)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Auteur)
+                </td>
+               
+                <td>
+                    <input type="checkbox" name="chk" />
+                </td>
+                <td>
+                    <input type="checkbox" name="chd" />
+                </td>
+
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Mise à jour</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Consulter</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+                </td>
+            </tr>
             }
         </tbody>
 </table>
